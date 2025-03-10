@@ -38,6 +38,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --optimize-autoloader
 
+RUN chmod +x bin/console
+
 RUN npm run build
 
 RUN chown -R www-data:www-data /var/www/html/var /var/www/html/public && \
