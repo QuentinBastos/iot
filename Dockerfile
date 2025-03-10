@@ -27,12 +27,15 @@ RUN a2enmod rewrite
 WORKDIR /var/www/html
 
 COPY package.json package-lock.json ./
+
 RUN npm install
 
 COPY . /var/www/html
 
 RUN rm -rf /var/www/html/vendor
+
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
 RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --optimize-autoloader
 
 RUN chmod +x bin/console
@@ -44,10 +47,12 @@ RUN chown -R www-data:www-data /var/www/html/var /var/www/html/public && \
 
 COPY wait-for-it.sh /usr/local/bin/wait-for-it.sh
 COPY init.sh /usr/local/bin/init.sh
+
 RUN chmod +x /usr/local/bin/wait-for-it.sh /usr/local/bin/init.sh && \
     dos2unix /usr/local/bin/wait-for-it.sh /usr/local/bin/init.sh
 
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 
 EXPOSE 80
