@@ -22,12 +22,6 @@ Encore
      * and one CSS file (e.g. app.scss) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
-    .addEntry('timer', './assets/js/timer.js')
-
-    .addStyleEntry('app_css', './assets/styles/app.scss')
-    .addStyleEntry('aside_css', './assets/styles/aside.scss')
-    .addStyleEntry('tournament_css', './assets/styles/tournament.scss')
-
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
 

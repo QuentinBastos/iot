@@ -10,7 +10,7 @@ services:
       db:
         condition: service_healthy
     environment:
-      MYSQL_DATABASE: Aloas
+      MYSQL_DATABASE: iot
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     command: ["sh", "-c", "/usr/local/bin/wait-for-it.sh db -- /usr/local/bin/init.sh && apache2-foreground"]
 
