@@ -1,0 +1,27 @@
+# types.yaml
+types:
+  - name: science_fiction
+  - name: fantasy
+  - name: mystery
+  - name: horror
+  - name: romance
+  - name: thriller
+  - name: adventure
+  - name: historical
+  - name: dystopia
+  - name: biography
+  - name: autobiography
+  - name: essay
+  - name: drama
+  - name: poetry
+  - name: philosophical
+  - name: gothic
+  - name: short_story
+  - name: epistolary
+  - name: surrealism
+  - name: utopia
+  - name: fantastic
+  - name: memoir
+  - name: coming_of_age
+  - name: post_apocalyptic
+  - name: satire
