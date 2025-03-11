@@ -7,6 +7,3 @@ done
 
 
 mysql -h db -u root -e "CREATE DATABASE IF NOT EXISTS \`${MYSQL_DATABASE}\`;"
-
-cd /var/www || exit
-php bin/console doctrine:migrations:migrate --no-interaction
